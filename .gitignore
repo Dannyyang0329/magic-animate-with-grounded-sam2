@@ -1,0 +1,4 @@
+*.pth
+*.pkl
+original_frames/
+tracked_frames/
