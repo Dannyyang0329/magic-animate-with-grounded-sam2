@@ -20,8 +20,8 @@ seed:
 - 1
 size: 512
 source_image:
-- //home/ycliang/cvpdl/final/img_sample/demo4.png
+- ../data/reference_images/ElonMusk.jpg
 steps: 25
 video_path:
-- //home/ycliang/cvpdl/final/densepose/output_videos/pose_dive_2.mp4
+- ../data/output_videos/input_video/densepose_R101.mp4
 video_type: condition
