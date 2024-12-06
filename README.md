@@ -45,9 +45,31 @@
     ```
 
 
-### Other dependencies
+### Other dependencies for Grounded-SAM-2 and Densepose
     ```bash
     pip install opencv-python supervision transformers addict yapf pycocotools timm decord ninja av
     ```
 
+### MagicAnimate
+
+* Download models
+    You need to use git-lfs to download the models. If you don't have git-lfs installed, you can install it using conda.
+
+    NOTICE: Huggingface access token is required to download the model. You can create a token from your huggingface account
+
+    ```bash
+    conda install -c conda-forge git-lfs
+    git lfs install
+    ```
+    ```bash
+    bash download_magic_animate_models.sh
+    ```
+
+* Create a new environment
+
+    ```bash
+    conda create -n m-anim python=3.10
+    conda activate m-anim
+    pip install -r MagicAnimate/requirements.txt
+    ```
 

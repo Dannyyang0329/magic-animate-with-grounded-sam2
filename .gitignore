@@ -1,4 +1,6 @@
+.env
 *.pth
 *.pkl
 original_frames/
 tracked_frames/
+pretrained_models/*
