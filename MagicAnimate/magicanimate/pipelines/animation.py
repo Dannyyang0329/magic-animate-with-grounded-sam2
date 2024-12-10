@@ -58,7 +58,8 @@ def main(args):
         time_str = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
         savedir = f"samples/{Path(args.config).stem}-{time_str}"
     else:
-        savedir = f"samples/{config.savename}"
+        # savedir = f"samples/{config.savename}"
+        savedir = f"{config.savename}"
         
     if args.dist:
         dist.broadcast_object_list([savedir], 0)

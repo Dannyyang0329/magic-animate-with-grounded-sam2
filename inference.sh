@@ -1,20 +1,22 @@
-cuda_device=1
+cuda_device=0
+
+input_video_name="input_video7"
+reference_image_name="twomen"
+output_folder="../data/output_videos/${input_video_name}-${reference_image_name}"
 
 # Grounded-SAM-2
-input_video_name="input_video"
 input_video_path="../data/input_videos/${input_video_name}.mp4"
-sam2_output_path="../data/output_videos/${input_video_name}/video_no_bg.mp4"
-sam2_src_folder="../data/output_videos/${input_video_name}/original_frames"
-sam2_trc_folder="../data/output_videos/${input_video_name}/tracked_frames"
+sam2_output_path="${output_folder}/video_no_bg.mp4"
+sam2_src_folder="${output_folder}/original_frames"
+sam2_trc_folder="${output_folder}/tracked_frames"
 sam2_text_prompt="Human"
 # DensePose
 model_name="densepose_R101"
 densepose_model_path="model/${model_name}.pkl"
-densepose_output_path="../data/output_videos/${input_video_name}/${model_name}.mp4"
+densepose_output_path="${output_folder}/${model_name}.mp4"
 # Magic-animate
+reference_image_path="../data/reference_images/${reference_image_name}.jpg"
 magic_animate_yaml="configs/prompts/animation_from_vid.yaml"
-reference_image_path="../data/reference_images/ElonMusk.jpg"
-result_video_folder="../data/output_videos/${input_video_name}/result.mp4"
 
 source activate gsam2
 if [ $? -eq 0 ]; then
@@ -86,6 +88,7 @@ with open("$magic_animate_yaml", "r") as f:
 
 config["source_image"] = ["$reference_image_path"]
 config["video_path"] = ["$densepose_output_path"]
+config["savename"] = "$output_folder"
 
 with open("$magic_animate_yaml", "w") as f:
     yaml.safe_dump(config, f)

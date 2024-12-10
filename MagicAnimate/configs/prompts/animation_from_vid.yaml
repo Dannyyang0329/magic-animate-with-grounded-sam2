@@ -15,13 +15,13 @@ pretrained_model_path: pretrained_models/stable-diffusion-v1-5
 pretrained_unet_path: ''
 pretrained_vae_path: pretrained_models/sd-vae-ft-mse
 save_individual_videos: false
-savename: null
+savename: ../data/output_videos/input_video7-twomen
 seed:
 - 1
 size: 512
 source_image:
-- ../data/reference_images/ElonMusk.jpg
+- ../data/reference_images/twomen.jpg
 steps: 25
 video_path:
-- ../data/output_videos/input_video/densepose_R101.mp4
+- ../data/output_videos/input_video7-twomen/densepose_R101.mp4
 video_type: condition

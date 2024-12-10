@@ -16,7 +16,8 @@ fi
 # get the HUGGINGFACE_TOKEN from .env file
 if [ ! -d "stable-diffusion-v1-5" ]; then
     echo "Downloading stable-diffusion-v1-5 model..."
-    git lfs clone "https://huggingface.co/benjamin-paine/stable-diffusion-v1-5"
+    # git lfs clone "https://huggingface.co/benjamin-paine/stable-diffusion-v1-5"
+    git lfs clone "https://huggingface.co/stable-diffusion-v1-5/stable-diffusion-v1-5"
 else
     echo "stable-diffusion-v1-5 model already exists"
 fi

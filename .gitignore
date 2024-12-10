@@ -4,3 +4,7 @@
 original_frames/
 tracked_frames/
 pretrained_models/*
+
+data/input_videos/*
+data/output_videos/*
+data/reference_images/*
